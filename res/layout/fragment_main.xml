@@ -7,10 +7,50 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.chibepazam.MainActivity$PlaceholderFragment" >
+    
+    
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+     <EditText
+            android:id="@+id/ET1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="51dp"
+            android:ems="10"
+            android:inputType="phone" >
+        <requestFocus />
+     </EditText>
+
+     <Button
+         android:id="@+id/B1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/value"
+         android:layout_alignParentBottom="true"
+         android:layout_marginBottom="49dp"
+         android:text="Button" />
+
+
+     <TextView
+         android:id="@+id/TV1"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/button1"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="49dp"
+         android:ems="10"
+         android:inputType="textMultiLine" />
+     
+     	
+     <Button
+         android:id="@+id/B2"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/value"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="26dp"
+         android:text="Button" />
+     
 
 </RelativeLayout>
