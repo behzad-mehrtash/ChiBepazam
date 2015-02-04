@@ -1,9 +1,5 @@
 package com.example.chibepazam;
 
-import java.util.ArrayList;
-
-import com.example.chibepazam.models.Food;
-
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
@@ -15,12 +11,12 @@ import android.widget.ListView;
 
 public class SecondPage extends Fragment {
 	View v;
-	ArrayList<Food> foods;
 	ArrayAdaptor aa;
+	ThirdPage tp;
 	
-	public SecondPage(ArrayList<Food> foods) {
-		this.foods=foods;
-//		aa= new ArrayAdaptor(getActivity().getApplicationContext(),foods);
+	
+	public SecondPage() { //why is it needed??
+		super();
 	}
 
 	@Override
@@ -33,6 +29,9 @@ public class SecondPage extends Fragment {
 	}
 	
 	private void setUpInnerViewElements(){
+		final Bundle bundle = new Bundle();
+		final int[] foods = getArguments().getIntArray("selected_foods");
+		
 		ListView lv = (ListView)v.findViewById(R.id.lv_second_page);
 		lv.setAdapter(aa);
 		lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -40,10 +39,13 @@ public class SecondPage extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, final View view,
 			          int position, long id) {
-						
+		        
+				bundle.putInt("selected_food", foods[position]);		
+				ThirdPage tp=new ThirdPage();
+				tp.setArguments(bundle);
+				
 				FragmentManager fm = getFragmentManager();
-				fm.beginTransaction().add(R.id.lv_second_page,
-						new ThirdPage(foods.get(position)));
+				fm.beginTransaction().add(R.id.lv_second_page,tp).commit();
 										
 			}
 			
