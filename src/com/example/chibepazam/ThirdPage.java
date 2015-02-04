@@ -1,25 +1,30 @@
 package com.example.chibepazam;
 
 
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
+import com.example.chibepazam.DAO.FoodDAO;
 import com.example.chibepazam.models.Food;
 
 public class ThirdPage extends Fragment {
 	View v;
 	Food food;
+	FoodDAO fdb=new FoodDAO(getActivity().getApplicationContext());
 	
-	public ThirdPage(Food food){
-		this.food=food;
+//	public ThirdPage(Food food){
+//		this.food=food;
+//	}
+	
+	public ThirdPage() { //why is it needed??
+		super();
 	}
-	
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -30,7 +35,7 @@ public class ThirdPage extends Fragment {
 	}
 	
 	private void setUpInnerViewElements(){
-		food=(Food) getArguments().get("selectedFood");
+		food = fdb.getAllFoods().get((Integer) getArguments().get("selected_food"));
 		
 		TextView title = (TextView) v.findViewById(R.id.tv_title_thirdPage);
 		TextView context = (TextView) v.findViewById(R.id.tv_context_thirdPage);

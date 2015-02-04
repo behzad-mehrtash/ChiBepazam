@@ -6,6 +6,7 @@ import com.example.chibepazam.models.Food;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ public class SecondPage extends Fragment {
 		this.ingredients=ingredients;
 //		aa= new ArrayAdaptor(getActivity().getApplicationContext(),foods);
 	}*/
+
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,9 @@ public class SecondPage extends Fragment {
 	}
 	
 	private void setUpInnerViewElements(){
+		final Bundle bundle = new Bundle();
+		final int[] foods = getArguments().getIntArray("selected_foods");
+		
 		ListView lv = (ListView)v.findViewById(R.id.lv_second_page);
 		lv.setAdapter(aa);
 		lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -50,16 +55,19 @@ public class SecondPage extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, final View view,
 			          int position, long id) {
-						
-//				FragmentManager fm = getFragmentManager();
-//				fm.beginTransaction().add(R.id.lv_second_page,
-//						new ThirdPage(foods.get(position)));
+		        
+				bundle.putInt("selected_food", foods[position]);		
+				ThirdPage tp=new ThirdPage();
+				tp.setArguments(bundle);
+				
+				FragmentManager fm = getFragmentManager();
+				fm.beginTransaction().replace(R.id.lv_second_page, (Fragment)tp).commit();
 										
 			}
 			
 		
 		});
-//		aa.notifyDataSetChanged()??male che karie?
+		
 	
 	}
 }
