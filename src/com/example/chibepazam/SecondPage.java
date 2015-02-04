@@ -1,19 +1,27 @@
 package com.example.chibepazam;
 
+import java.util.ArrayList;
+
+import com.example.chibepazam.models.Food;
+
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView.FindListener;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 public class SecondPage extends Fragment {
 	View v;
+	ArrayList<Food> foods;
+	ArrayAdaptor aa;
+	
+	public SecondPage(ArrayList<Food> foods) {
+		this.foods=foods;
+//		aa= new ArrayAdaptor(getActivity().getApplicationContext(),foods);
+	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,7 +34,22 @@ public class SecondPage extends Fragment {
 	
 	private void setUpInnerViewElements(){
 		ListView lv = (ListView)v.findViewById(R.id.lv_second_page);
+		lv.setAdapter(aa);
+		lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, final View view,
+			          int position, long id) {
+						
+				FragmentManager fm = getFragmentManager();
+				fm.beginTransaction().add(R.id.lv_second_page,
+						new ThirdPage(foods.get(position)));
+										
+			}
+			
 		
+		});
+//		aa.notifyDataSetChanged()??male che karie?
 	
 	}
 }

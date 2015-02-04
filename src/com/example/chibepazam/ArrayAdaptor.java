@@ -39,16 +39,16 @@ public class ArrayAdaptor extends ArrayAdapter<Food> {
     textView.setText(context.getResources().getString(R.string.name)+'\n'+
     		foods.get(position).getName()+'\n'+context.getResources().getString(R.string.ingredients)+'\n'
     		+foods.get(position).getIngredient());
-    LinearLayout list_row=(LinearLayout) rowView.findViewById(R.id.list_row);
-    list_row.setOnClickListener(new OnClickListener() {
-		
-		@Override
-		public void onClick(View arg0) {
-//			FragmentManager fm = get;
+//    LinearLayout list_row=(LinearLayout) rowView.findViewById(R.id.list_row);
+//    list_row.setOnClickListener(new OnClickListener() {
+//		
+//		@Override
+//		public void onClick(View arg0) {
+//			FragmentManager fm = getM
 //			fm.beginTransaction().add(R.id., arg1)
-
-		}
-	});
+//
+//		}
+//	});
     		
     	
   	

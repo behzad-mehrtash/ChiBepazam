@@ -6,7 +6,9 @@
  	<string name="ingredients">مواد اولیه:</string>
  	<string name="name"> نام:</string>
  	<string name="recipe">طرز تهیه:</string>
- 		
+ 	<string name="people">تعداد نفرات:</string>
+ 	<string name="time">زمان پخت:</string>
+ 			
 
 </resources>
 <!--<string name="action_settings">Settings</string>-->    
