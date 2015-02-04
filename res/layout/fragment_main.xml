@@ -1,7 +1,8 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -9,48 +10,44 @@
     tools:context="com.example.chibepazam.MainActivity$PlaceholderFragment" >
     
     
-
-     <EditText
-            android:id="@+id/ET1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="51dp"
-            android:ems="10"
-            android:inputType="phone" >
-        <requestFocus />
-     </EditText>
-
-     <Button
-         android:id="@+id/B1"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignLeft="@+id/value"
-         android:layout_alignParentBottom="true"
-         android:layout_marginBottom="49dp"
-         android:text="Button" />
-
-
      <TextView
-         android:id="@+id/TV1"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/button1"
-         android:layout_centerHorizontal="true"
-         android:layout_marginTop="49dp"
-         android:ems="10"
-         android:inputType="textMultiLine" />
+        android:id="@+id/tv_ingredients_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:inputType="textMultiLine" />
      
-     	
-     <Button
-         android:id="@+id/B2"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/value"
-         android:layout_centerHorizontal="true"
-         android:layout_marginTop="26dp"
-         android:text="Button" />
-     
+<!--     <ScrollView android:id="@+id/sv_ingredients_scroll" -->
+<!--         android:layout_width="match_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_below="@id/tv_ingredients_list"> -->
+        
+        <ListView 
+            android:id="@+id/lv_ingredients"
+            android:layout_width="match_parent"
+            android:layout_below="@id/tv_ingredients_list"
+            android:layout_height="match_parent">
+            
+        </ListView>
+<!--     </ScrollView> -->
+    
+<!--     <ImageButton -->
+<!--         android:id="@+id/btn_add_ingredient" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_below="@id/sv_ingredients_scroll" -->
+<!--         android:text="Button" /> -->
 
-</RelativeLayout>
+   
+
+    <ImageButton
+        android:id="@+id/btn_search"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:text="Button"
+        android:src="@drawable/ic_launcher" />
+<!--         android:layout_below="@id/btn_add_ingredient" -->
+
+</LinearLayout>
