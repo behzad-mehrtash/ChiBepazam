@@ -1261,6 +1261,7 @@ containing a value of this type.
         public static final int name=0x7f0a0010;
         public static final int people=0x7f0a0012;
         public static final int recipe=0x7f0a0011;
+        public static final int search=0x7f0a0014;
         public static final int time=0x7f0a0013;
     }
     public static final class style {

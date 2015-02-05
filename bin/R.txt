@@ -359,6 +359,7 @@ int string ingredients 0x7f0a000f
 int string name 0x7f0a0010
 int string people 0x7f0a0012
 int string recipe 0x7f0a0011
+int string search 0x7f0a0014
 int string time 0x7f0a0013
 int style AppBaseTheme 0x7f0b008b
 int style AppTheme 0x7f0b008c
