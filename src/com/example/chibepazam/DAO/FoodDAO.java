@@ -19,7 +19,8 @@ public class FoodDAO {
 			MySQLHelper.COLUMN_NAME_FOOD_NAME,
 			MySQLHelper.COLUMN_NAME_COOK_TIME,
 			MySQLHelper.COLUMN_NAME_COOK_PEOPLE,
-			MySQLHelper.COLUMN_NAME_INGREDIENT, MySQLHelper.COLUMN_NAME_RECIPE };
+			MySQLHelper.COLUMN_NAME_INGREDIENT, MySQLHelper.COLUMN_NAME_RECIPE,
+			MySQLHelper.COLUMN_NAME_IMAGE };
 
 	public FoodDAO(Context context) {
 		dbHelper = new MySQLHelper(context);
@@ -34,13 +35,14 @@ public class FoodDAO {
 	}
 
 	public void createFood(String name, String time, String people,
-			String ingredient, String recipe) {
+			String ingredient, String recipe, String image) {
 		ContentValues values = new ContentValues();
 		values.put(MySQLHelper.COLUMN_NAME_FOOD_NAME, name);
 		values.put(MySQLHelper.COLUMN_NAME_COOK_TIME, time);
 		values.put(MySQLHelper.COLUMN_NAME_COOK_PEOPLE, people);
 		values.put(MySQLHelper.COLUMN_NAME_INGREDIENT, ingredient);
 		values.put(MySQLHelper.COLUMN_NAME_RECIPE, recipe);
+		values.put(MySQLHelper.COLUMN_NAME_IMAGE, image);
 		long insertId = fooddb.insert(MySQLHelper.TABLE_NAME, null, values);
 	}
 
@@ -76,6 +78,7 @@ public class FoodDAO {
 		food.setPeople(cursor.getString(3));
 		food.setIngredient(cursor.getString(4));
 		food.setRecipe(cursor.getString(5));
+		food.setImage(cursor.getString(6));
 		return food;
 	}
 }

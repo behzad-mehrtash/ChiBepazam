@@ -9,6 +9,7 @@ public class Food {
 	private String people;
 	private String ingredient;
 	private String recipe;
+	private String image;
 	
 	
 	public long getId() {
@@ -46,6 +47,12 @@ public class Food {
 	}
 	public void setRecipe(String recipe) {
 		this.recipe = recipe;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 }

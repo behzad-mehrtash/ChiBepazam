@@ -3,11 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal" >
-    
-    <RadioButton 
+
+    <!--
+         <RadioButton 
         android:id="@+id/radio_ingredient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"/>
+    -->
+
+
+    <!--
+         <ToggleButton
+        android:id="@+id/radio_ingredient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black" />
+    -->
+
+    <CheckBox
+        android:id="@+id/radio_ingredient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black" />
 
 </LinearLayout>

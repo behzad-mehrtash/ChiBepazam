@@ -19,55 +19,55 @@ public class SecondPage extends Fragment {
 	ArrayList<String> ingredients;
 	ArrayAdaptor aa;
 	String searchableIngredients;
-	
-	/*public SecondPage(ArrayList<String> ingredients) {
-		this.ingredients=ingredients;
-//		aa= new ArrayAdaptor(getActivity().getApplicationContext(),foods);
-	}*/
-
+	String[] ingred_array;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Bundle bundle = this.getArguments();
 		if (bundle != null) {
-		     searchableIngredients = bundle.getString("ingredients");
+			searchableIngredients = bundle.getString("ingredients");
+			ingred_array = searchableIngredients.split(",");
+			for (int i = 0; i < ingred_array.length; i++) {
+				ingred_array[i] = ingred_array[i].trim();
+			}
 		}
 	}
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		v = inflater.inflate(R.layout.second_page, container, false);
-		Toast.makeText(getActivity(), searchableIngredients, Toast.LENGTH_SHORT).show();
+		Toast.makeText(getActivity(), searchableIngredients, Toast.LENGTH_SHORT)
+				.show();
 		setUpInnerViewElements();
-		
+
 		return v;
 	}
-	
-	private void setUpInnerViewElements(){
+
+	private void setUpInnerViewElements() {
+		ListView lv = (ListView) v.findViewById(R.id.lv_second_page);
+		lv.setAdapter(aa);
 		final Bundle bundle = new Bundle();
 		final int[] foods = getArguments().getIntArray("selected_foods");
-		
-		ListView lv = (ListView)v.findViewById(R.id.lv_second_page);
-		lv.setAdapter(aa);
+
 		lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, final View view,
-			          int position, long id) {
-		        
-				bundle.putInt("selected_food", foods[position]);		
-				ThirdPage tp=new ThirdPage();
+					int position, long id) {
+
+				bundle.putInt("selected_food", foods[position]);
+				ThirdPage tp = new ThirdPage();
 				tp.setArguments(bundle);
-				
+
 				FragmentManager fm = getFragmentManager();
-				fm.beginTransaction().replace(R.id.lv_second_page, (Fragment)tp).commit();
-										
+				fm.beginTransaction()
+						.replace(R.id.lv_second_page, (Fragment) tp).commit();
+
 			}
-			
-		
+
 		});
-		
-	
+
 	}
 }
