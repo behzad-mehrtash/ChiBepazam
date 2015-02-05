@@ -48,10 +48,6 @@ public class ArrayAdaptor extends ArrayAdapter<Food> {
 //
 //		}
 //	});
-    		
-    	
-  	
-
 
     imageView.setImageResource(R.drawable.ic_launcher);
     return rowView;
