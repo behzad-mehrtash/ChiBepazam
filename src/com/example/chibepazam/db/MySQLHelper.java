@@ -14,6 +14,7 @@ public class MySQLHelper extends SQLiteOpenHelper {
 	public static final String COLUMN_NAME_COOK_PEOPLE = "cook_people";
 	public static final String COLUMN_NAME_INGREDIENT = "ingredient";
 	public static final String COLUMN_NAME_RECIPE = "recipe";
+	public static final String COLUMN_NAME_IMAGE = "image";
 
 	private static final String DATABASE_NAME = "food.db";
 	private static final int DATABASE_VERSION = 1;
@@ -24,7 +25,7 @@ public class MySQLHelper extends SQLiteOpenHelper {
 			+ " integer primary key autoincrement, " + COLUMN_NAME_FOOD_NAME
 			+ " text, " + COLUMN_NAME_COOK_TIME + " text, "
 			+ COLUMN_NAME_COOK_PEOPLE + " text, " + COLUMN_NAME_INGREDIENT
-			+ " text," + COLUMN_NAME_RECIPE + " text);";
+			+ " text," + COLUMN_NAME_RECIPE + " text," +COLUMN_NAME_IMAGE + " text);";
 
 	public MySQLHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);

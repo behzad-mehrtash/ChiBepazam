@@ -8,43 +8,34 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="1"
     tools:context="com.example.chibepazam.MainActivity$PlaceholderFragment" >
 
-    <TextView
-        android:id="@+id/tv_ingredients_list"
+    <LinearLayout
+        android:id="@+id/ll_list_linear"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:ems="10"
-        android:inputType="textMultiLine" />
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-    <!-- <ScrollView android:id="@+id/sv_ingredients_scroll" -->
-    <!-- android:layout_width="match_parent" -->
-    <!-- android:layout_height="wrap_content" -->
-    <!-- android:layout_below="@id/tv_ingredients_list"> -->
+        <TextView
+            android:id="@+id/tv_ingredients_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textMultiLine" />
 
-    <ListView
-        android:id="@+id/lv_ingredients"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_ingredients_list" >
-    </ListView>
-    <!-- </ScrollView> -->
+        <ListView
+            android:id="@+id/lv_ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7" >
+        </ListView>
 
-
-    <!-- <ImageButton -->
-    <!-- android:id="@+id/btn_add_ingredient" -->
-    <!-- android:layout_width="wrap_content" -->
-    <!-- android:layout_height="wrap_content" -->
-    <!-- android:layout_below="@id/sv_ingredients_scroll" -->
-    <!-- android:text="Button" /> -->
-
-    <ImageButton
-        android:id="@+id/btn_search"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:src="@drawable/ic_launcher"
-        android:text="@string/search"  />
+        <ImageButton
+            android:id="@+id/btn_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+    </LinearLayout>
 
 </LinearLayout>

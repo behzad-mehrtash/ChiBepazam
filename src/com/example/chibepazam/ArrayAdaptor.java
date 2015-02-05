@@ -2,6 +2,7 @@ package com.example.chibepazam;
 
 import com.example.chibepazam.models.Food;
 import java.util.ArrayList;
+import java.util.List;
 
 
 import android.app.FragmentManager;
@@ -20,9 +21,9 @@ import android.widget.Toast;
 
 public class ArrayAdaptor extends ArrayAdapter<Food> {
   private final Context context;
-  private final ArrayList<Food> foods;
+  private final List<Food> foods;
 
-  public ArrayAdaptor(Context context, ArrayList<Food> foods) {
+  public ArrayAdaptor(Context context, List<Food> foods) {
     super(context, R.layout.row_of_list, foods);
     this.context = context;
     this.foods = foods;

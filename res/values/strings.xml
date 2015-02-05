@@ -9,8 +9,27 @@
  	<string name="people">تعداد نفرات:</string>
  	<string name="time">زمان پخت:</string>
  	<string name="search"> جستجو</string>
- 		
- 			
+
+    
+    <string-array name="ingredients_array">
+        <item>تخم مرغ</item>
+        <item>آرد</item>
+        <item>رب</item>
+        <item>روغن</item>
+        <item>برنج</item>
+        <item>مرغ</item>
+        <item>گوشت</item>
+        <item>سیب زمینی</item>
+        <item>عدس</item>
+        <item>لوبیا</item>
+        <item>پیاز</item>
+        <item>هویج</item>
+        <item>گوجه فرنگی</item>
+        <item>کدو</item>
+        <item>بادمجان</item>
+        <item>ماهی</item>
+        <item>سبزی</item>
+        <item>زرشک</item>
+    </string-array>
 
 </resources>
-<!--<string name="action_settings">Settings</string>-->    
