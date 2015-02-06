@@ -60,7 +60,7 @@ public class FisrtPage extends Fragment {
 			public void onClick(View arg0) {
 				//finds the indexes of the foods which contain the ingredients
 				search(tv_ingredients_list.getText().toString());
-				
+				System.out.println("search finished");
 				Bundle bundle = new Bundle();				
 				bundle.putIntArray("selected_foods", results);
 				SecondPage secondFragment = new SecondPage();
@@ -156,21 +156,33 @@ public class FisrtPage extends Fragment {
 	}
 	
 	private void search(String str){
+		
+		System.out.println("miyaaaaaaaaaaaaaaaaaaaay?");
+		
 		MainActivity ma = (MainActivity)getActivity();///??????????????
 		foods = ma.fDB.getAllFoods();
+		for (int i=0;i<foods.get(0).getIngredient().length;i++)
+			System.out.println("**"+foods.get(0).getIngredient()[i][0]);
+		System.out.println("size:"+foods.size());
 		searchableIngredients = str.split(",");
 		for (int i = 0; i < searchableIngredients.length; i++){ 
-			searchableIngredients[i] = searchableIngredients[i].trim();			
+			searchableIngredients[i] = searchableIngredients[i].trim();
+//			System.out.println("*****"+searchableIngredients[i]);
 			for(int k=0;k<foods.size();k++){
 				for(int j=0;j<foods.get(k).getIngredient().length;j++){
+					System.out.println("j:"+j+" k:"+k+" i:"+i);
 					if(foods.get(k).getIngredient()[j][0].equals(searchableIngredients[i]))
 						//the foods which contains this ingredient
-						temp_results.add(k); 
+						if(!temp_results.contains(k))
+							temp_results.add(k); 
 				}
 			}
 		}
 		results=new int[temp_results.size()];
-		for (int i=0;i<results.length;i++)
-			results[i]=temp_results.get(i);  
+		System.out.println("results:"+results.length);
+		for (int i=0;i<results.length;i++){
+			results[i]=temp_results.get(i);
+			System.out.println("**"+results[i]);
+		}
 	}
 }

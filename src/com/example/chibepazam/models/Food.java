@@ -46,6 +46,7 @@ public class Food {
 		String[] temp;;
 		
 		for(int i=0;i<rows.length;i++){
+//			System.out.println("ingredients: "+rows[i]);
 			temp=rows[i].split(":");
 			this.ingredient[i][0]=temp[0].trim();
 			this.ingredient[i][1]=temp[1].trim();			
